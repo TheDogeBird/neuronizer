@@ -1,0 +1,18 @@
+This script creates a Neuron class that models a simple artificial neuron. 
+
+When an instance of Neuron is created, it initializes with an empty set of words and a count of 0. 
+The activate method of the Neuron class is responsible for processing input text and activating other neurons that are associated with the input word.
+
+The activate method first checks if the length of the input word is less than or equal to 2 characters, in which case it skips the word. 
+It then retrieves a random definition for the word from WordNet, a lexical database for the English language.
+If no definitions are found for the word, it skips the word.
+
+After printing the definition for the input word, the activate method then activates all other neurons that are associated with the input word. 
+The associated_neurons attribute is an unresolved attribute reference that is expected to be defined in child classes of Neuron.
+
+The input_loop function creates a loop that continuously prompts the user to enter some text. 
+When the user enters text, it is tokenized into individual words using the nltk.word_tokenize method. 
+Each word is then passed to the activate method of the neuron instance.
+
+The script then creates a neuron instance and a input_thread thread that runs the input_loop function, passing the neuron instance as an argument. 
+The thread is started and joined, causing the program to run indefinitely, waiting for input from the user.
